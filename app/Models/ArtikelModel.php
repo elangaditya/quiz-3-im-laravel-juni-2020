@@ -53,4 +53,8 @@ class ArtikelModel
       $artikel = DB::table('artikel')->get();
       return $artikel;
     }
+
+    public static function delete($id){
+      $delete = DB::table('artikel')->where('id', $id)->delete();
+    }
 }

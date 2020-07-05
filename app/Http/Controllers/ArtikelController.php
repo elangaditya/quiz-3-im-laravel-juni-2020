@@ -40,6 +40,12 @@ class ArtikelController extends Controller
       $id = $data["id"];
       unset($data["id"]);
       $artikel = ArtikelModel::update($data, $id);
-      return view('artikel.index', compact('artikel'));
+      return redirect('/artikel');
+    }
+
+    public function delete($id){
+      $delete = ArtikelModel::delete($id);
+      // dd($id);
+      return redirect('/artikel');
     }
 }
